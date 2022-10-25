@@ -78,7 +78,7 @@ Se você chegou até aqui, muito bem! 🎉 Essa parte é um desafio extra que de
 
 
 ## Envio de leads:
-Os dados de cada lead deverão ser enviados via POST para o endpoint http://api-bra1.addsales.com/join-asbr/ti/lead
+Os dados de cada lead deverão ser enviados via POST para o endpoint http://api-bra1.addsales.com/join-asbr/ti/lead?token=[SEU_TOKEN]
 
 Parâmetros esperados:
 
@@ -89,8 +89,8 @@ Parâmetros esperados:
 - unidade (Elemento do conjunto ["Porto Alegre", "Curitiba", "São Paulo", "Rio de Janeiro", "Belo Horizonte", "Brasília", "Salvador", "Recife", "INDISPONÍVEL"])
 - data_nascimento (data no formato YYYY-mm-dd)
 - score (int de 0 a 10)
-- token (String)
 
+## Como obter o Token
 Para obter o token basta acessar o link a seguir substituindo o email do parâmetro pelo seu. Ex: http://api-bra1.addsales.com/join-asbr/ti/token?email=vagas-ti@addsales.com
 
 Uma vez obtido, o token não sofrerá alteração (mas poderá ser consultado novamente, caso necessário).
