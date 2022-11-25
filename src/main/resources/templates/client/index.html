@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:data="http://www.thymeleaf.org/extras/data">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Compre Já</title>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+        <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
+        <script th:src="@{/js/client.js}"></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row" style="margin:30px 0">
+                <div class="col-lg-3">
+                    <img src="https://www.addsales.com/img/logo-addsales-2.png">
+                </div>
+                <div class="col-lg-9">
+                    <h3>Nome do Produto</h3>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-6" id="form-container">
+
+                    <form id="form_1" class="form-step" th:object="${clientDTO}" method="post">
+                        <div id="step_1" class="panel panel-info">
+                            <div class="panel-heading">
+                                <div class="panel-title">
+                                    Preencha seus dados para receber contato
+                                </div>
+                            </div>
+                            <div class="panel-body">
+                                <fieldset>
+                                    <div class="row form-group">
+                                        <div class="col-lg-6">
+                                            <label>Nome Completo</label>
+                                            <input class="form-control" type="text" th:field="*{name}">
+                                        </div>
+
+                                        <div class="col-lg-6">
+                                            <label>Data de Nascimento</label>
+                                            <input id="birthAt" class="form-control js-mask-date" type="text" th:field="*{birthAt}">
+                                        </div>
+                                    </div>
+
+                                    <div class="row form-group">
+                                        <div class="col-lg-6">
+                                            <label>Email</label>
+                                            <input class="form-control" type="text" th:field="*{email}" >
+                                        </div>
+
+                                        <div class="col-lg-6">
+                                            <label>Telefone</label>
+                                            <input class="form-control" type="text" th:field="*{phone}" >
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <button type="button" id="next-step" class="btn btn-lg btn-info next-step">Próximo Passo</button>
+                                    </div>
+                                </fieldset>
+                            </div>
+                        </div>
+
+                    <div id="step_2" class="form-step" style="display:none">
+                        <div class="panel panel-info">
+                            <div class="panel-heading">
+                                <div class="panel-title">
+                                    Preencha seus dados para receber contato
+                                </div>
+                            </div>
+                            <div class="panel-body">
+                                <fieldset>
+                                    <div class="row form-group">
+                                        <div class="col-lg-6">
+                                            <label>Região</label>
+                                            <select required class="form-control" id="region" th:field="*{region}">
+                                                <option value="">Selecione a sua região</option>
+                                                <option value="0">Sul</option>
+                                                <option value="1">Sudeste</option>
+                                                <option value="2">Centro-Oeste</option>
+                                                <option value="3">Nordeste</option>
+                                                <option value="4">Norte</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="col-lg-6">
+                                            <label>Unidade</label>
+                                            <select class="form-control" id="unity"  th:field="*{unity}">
+                                                <option value="0">Selecione a unidade mais próxima</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <button type="submit" class="btn btn-lg btn-info">Enviar</button>
+                                    </div>
+                                </fieldset>
+                            </div>
+                        </div>
+                       </div> 
+                    </form>
+
+                </div>
+                <div class="col-lg-6">
+                    <h1>Chamada interessante para o produto</h1>
+                    <h2>Mais uma informação relevante</h2>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
